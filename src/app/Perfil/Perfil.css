@@ -1,0 +1,275 @@
+.h1Perfil{
+    color: rgb(0, 162, 255);
+    left: none;
+    margin-left: none;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+/* perfil */
+.perfil {
+    width: 75vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+    position: relative;
+}
+/* foto */
+.fotoPerfil {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 430px;
+    margin: 50px;
+    margin-top: 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagemPerfil {
+    border-radius: 500px;
+    width: 260px;
+    height: 260px;
+    border: 2px solid rgb(0, 162, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.arquivo{
+    width: 250px;
+    border-radius: 800px;
+}
+
+.botaoMudarImagem{
+    background-image: url(/src/assets/mudar-foto.png);
+    background-position: center;
+    background-size: 300px;
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    border-radius: 800px;
+    color: transparent;
+
+
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.nomePerfil {
+    width: 270px;
+    height: 120px;
+    padding-top: 25px;
+    color: rgb(0, 162, 255);
+    font-size: 25px;
+    left: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.btns{
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 340px;
+}
+
+.btnPerfil{
+    color: rgb(0, 162, 255);
+    background-color: white;
+    border: 2px solid rgb(0, 162, 255);
+    border-radius: 25px;
+    transition: 0.2s ease;
+    height: 60px;
+    margin-top: 20px;
+    width: fill;
+
+    &:hover{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border: 2px solid rgb(0, 162, 255);
+    }
+}
+
+/* informações da bike */
+
+.infosPerfil {
+    height: fit-content;
+    margin: 50px;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100em;
+}
+
+.infoPerfil {
+    height: 80px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: black;
+    width: 100%;
+    margin-right: 25px;
+}
+
+.secaoPerfil {
+    height: 40px;
+    font-weight: 700;
+}
+
+.textoPerfil {
+    height: 40px;
+    background-color: rgb(214, 214, 214);
+    font-weight: 400;
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 17px;
+    border: none;
+    width: 40vw;
+}
+
+.maisPerfil {
+    height: 70px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    width: 150px;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: white;
+    color: rgb(0, 162, 255);
+    border: 2px solid rgb(0, 162, 255);
+    transition: 0.2s ease;
+
+    &:hover {
+        background-color: rgb(0, 162, 255);
+        color: white;
+        border: 2px solid rgb(0, 162, 255);
+    }
+}
+
+
+
+.generos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkBoxGen{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    margin: 10px;
+    appearance: none;
+    background-color: #fff;
+    font: center;
+    color: rgb(0, 162, 255);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid rgb(0, 162, 255);
+    border-radius: 50px;
+
+    &:hover{
+        cursor: pointer;
+    }
+  }
+  
+  input[type="checkbox"]:checked::after{
+    content: "●";
+    color: rgb(0, 162, 255);
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 3px;
+  }
+
+/* ============ DESKTOP ============= */
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+}
+
+/* ============ TABLET ============= */
+
+@media (min-width: 0px) and (max-width: 1023.99px) {
+
+    .imagemPerfil{
+        width: 200px;
+        height: 200px;
+    }
+
+    .botaoMudarImagem{
+        width: 200px;
+        height: 200px;
+    }
+
+    .perfil{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .btns{
+        margin-top: -30px;
+    }
+
+    .infosPerfil{
+        width: 749px;
+        margin: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infoPerfil{
+        width: 75vw;
+        margin: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    .secaoPerfil{
+        width: 75vw;
+        font-size: 20px;
+    }
+
+    .textoPerfil {
+        height: 40px;
+        background-color: rgb(214, 214, 214);
+        font-weight: 400;
+        padding: 5px;
+        padding-left: 15px;
+        font-size: 17px;
+        border: none;
+        width: 75vw;
+    }
+}
+
+/* ============ MOBILE ============= */
+
+@media (min-width: 0px) and (max-width: 767.99px) {
+    
+}

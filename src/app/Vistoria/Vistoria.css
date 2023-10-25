@@ -1,0 +1,203 @@
+.mainvistoria{
+    left: 0;
+    margin: 0;
+}
+
+.h1vistoria{
+    color: rgb(0, 162, 255);
+    left: none;
+    margin-left: none;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.requisitos{
+    width: 1000px;
+    height: 900px;
+    left: 0;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 150px;
+    margin-top: 50px;
+    display: flex;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50px;
+}
+
+.requisito{
+    position: relative;
+    width: 450px;
+    height: 400px;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0;
+    padding: 35px;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 20px rgb(172, 172, 172);
+    
+
+}
+
+.tema{
+    color: rgb(0, 162, 255);
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recado{
+    text-align: justify;
+}
+
+/* parte da foto */
+
+.foto{
+    margin: 0;
+    width: 65vw;
+    height: fit-content;
+    background-color: rgb(214, 214, 214);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 100px;
+    margin-bottom: 100px;
+}
+
+.titulofoto{
+    color: white;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.tutorialFoto{
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera{
+    width: 100px;
+    margin: 50px;
+}
+
+/* ============ DESKTOP ============= */
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .requisitos{
+        flex-wrap:nowrap;
+        width: 80vw;
+    }
+
+    .requisito{
+        width: 60vw;
+    }
+
+    .foto{
+        margin: 0;
+        width: 65vw;
+        height: fit-content;
+        background-color: rgb(214, 214, 214);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        padding: 100px;
+        margin-bottom: 100px;
+    }
+    
+    .titulofoto{
+        font-size: 40px;
+    }
+    
+    .tutorialFoto{
+        font-size: 20px;
+    }
+    
+    .camera{
+        width: 90px;
+        margin: 50px;
+    }
+
+}
+
+/* ============ TABLET ============= */
+
+@media (min-width: 0px) and (max-width: 1023.99px) {
+    .requisitos{
+        margin-top: 0;
+        flex-wrap:nowrap;
+        width: 80vw;
+        height: fit-content;
+    }
+
+    .requisito{
+        width: 60vw;
+        height: fit-content;
+    }
+
+    .foto{
+        margin: 0;
+        width: 65vw;
+        height: fit-content;
+        background-color: rgb(214, 214, 214);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        padding: 50px;
+        margin-bottom: 100px;
+    }
+    
+    .titulofoto{
+        font-size: 40px;
+    }
+    
+    .tutorialFoto{
+        font-size: 20px;
+    }
+    
+    .camera{
+        width: 90px;
+        margin: 50px;
+    }
+
+}
+
+/* ============ MOBILE ============= */
+
+@media (min-width: 0px) and (max-width: 767.99px) {
+
+    .tema{
+        font-size: 30px;
+    }
+    
+    .recado{
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    .titulofoto{
+        font-size: 30px;
+    }
+    
+    .tutorialFoto{
+        font-size: 15px;
+    }
+    
+    .camera{
+        width: 70px;
+        margin: 30px;
+    }
+
+}
+

@@ -1,0 +1,501 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* header */
+
+header{
+    background-image: url('/src/assets/fundoheader.jpg');
+    width: 100vw;
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.integrantes{
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    margin-left: 5vw;
+}
+
+/* texto inicial do site */
+
+.sechome{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: -17vw;
+    top: 50px;
+}
+
+.h1home{
+    color: black;
+    width: 650px;
+    text-align: justify;
+    margin-top: 30px;
+    font-size: 45px;
+}
+
+.azul{
+    color: rgb(0, 162, 255);
+    position: relative;
+}
+
+._{
+    color: transparent;
+    margin-left: -40px;
+    background-color: transparent;
+}
+
+span{
+    color: white;
+    background-color: rgb(0, 162, 255);
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 15px;
+    font-size: 45px;
+}
+
+/* botão de testar vistoria */
+
+#testar{
+    color: white;
+    background-color: rgb(0, 162, 255);
+    border-radius: 30px;
+    font-size: 35px;
+    height: 57px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    transition: 0.2s ease;
+    border: solid 2px rgb(0, 162, 255);
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &:hover{
+        background-color: white;
+        color: rgb(0, 162, 255);
+    }
+}
+
+/* card informativo */
+
+.card{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    left: 0;
+    width: 1124.7px;
+}
+
+#idoso{
+    height: 300px;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    height: 300px; 
+    margin-left: 40px;
+
+    & h1{
+        color: rgb(0, 162, 255);
+        font-size: 49px;
+        margin-bottom:30px;
+    }
+
+    & p{
+        color: black;
+        font-weight: 500;
+        font-size: 25px;
+    }
+
+    & a{
+        color: rgb(0, 162, 255);
+        font-size: 30px;
+        text-align: right;
+    }
+}
+
+#confPlano{
+    &:hover{
+        color: rgb(0, 162, 255);
+        text-decoration: underline;
+    }
+}
+
+/* ============ DESKTOP ============= */
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    header{
+        background-image: url('/src/assets/fundoheader.jpg');
+        width: 100vw;
+        height: 800px;
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sechome{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: -15vw;
+        top: 50px;
+        font-size: 12px;
+    }
+    
+    .h1home{
+        color: black;
+        width: 550px;
+        text-align: justify;
+        margin-top: 30px;
+        font-size: 42px;
+    }
+    
+    .azul{
+        color: rgb(0, 162, 255);
+        position: relative;
+    }
+    
+    ._{
+        color: transparent;
+        margin-left: -40px;
+        background-color: transparent;
+    }
+    
+    span{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border-radius: 30px;
+        padding-left: 20px;
+        padding-right: 15px;
+        font-size: 40px;
+    }
+    
+    /* botão de testar vistoria */
+    
+    #testar{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border-radius: 30px;
+        font-size: 25px;
+        height: 57px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+        transition: 0.2s ease;
+        border: solid 2px rgb(0, 162, 255);
+    
+        &:hover{
+            background-color: white;
+            color: rgb(0, 162, 255);
+        }
+    }
+
+    .card{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        margin-top: 100px;
+        left: 0;
+        width:800px;
+    }
+    
+    #idoso{
+        height: 240px;
+    }
+    
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: justify;
+        height: 300px; 
+        margin-left: 40px;
+    
+        & h1{
+            color: rgb(0, 162, 255);
+            font-size: 39px;
+            margin-bottom:30px;
+        }
+    
+        & p{
+            color: black;
+            font-weight: 500;
+            font-size: 19px;
+        }
+    
+        & a{
+            color: rgb(0, 162, 255);
+            font-size: 30px;
+            text-align: right;
+        }
+    }
+}
+
+/* ======== TABLET ========== */
+
+@media (min-width: 768px) and (max-width: 1023.99px) {
+    header{
+        background-image: url('/src/assets/fundoheader.jpg');
+        width: 100vw;
+        height: 700px;
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sechome{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: -11vw;
+        top: 50px;
+        font-size: 9px;
+    }
+    
+    .h1home{
+        color: black;
+        width: 400px;
+        text-align: justify;
+        margin-top: 30px;
+        font-size: 38px;
+    }
+    
+    .azul{
+        color: rgb(0, 162, 255);
+        position: relative;
+    }
+    
+    ._{
+        color: transparent;
+        margin-left: -40px;
+        background-color: transparent;
+    }
+    
+    span{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border-radius: 30px;
+        padding-left: 20px;
+        padding-right: 15px;
+        font-size: 30px;
+    }
+    
+    /* botão de testar vistoria */
+    
+    #testar{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border-radius: 30px;
+        font-size: 23px;
+        height: 57px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+        transition: 0.2s ease;
+        border: solid 2px rgb(0, 162, 255);
+    
+        &:hover{
+            background-color: white;
+            color: rgb(0, 162, 255);
+        }
+    }
+
+    .card{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        margin-top: 100px;
+        left: 0;
+        width:700px;
+    }
+    
+    #idoso{
+        height: 240px;
+    }
+    
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: justify;
+        height: 300px; 
+        margin-left: 40px;
+    
+        & h1{
+            color: rgb(0, 162, 255);
+            font-size: 34px;
+            margin-bottom:30px;
+        }
+    
+        & p{
+            color: black;
+            font-weight: 500;
+            font-size: 15px;
+        }
+    
+        & a{
+            color: rgb(0, 162, 255);
+            font-size: 30px;
+            text-align: right;
+        }
+    }
+}
+
+/* =========== MOBILE =========== */
+
+@media (min-width: 0px) and (max-width: 767.99px) {
+    header{
+        background-image: url('/src/assets/fundoheader.jpg');
+        width: 100vw;
+        height: 700px;
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sechome{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: -11vw;
+        top: 50px;
+        font-size: 9px;
+    }
+    
+    .h1home{
+        color: black;
+        width: 50vw;
+        text-align: justify;
+        margin-top: 30px;
+        font-size: 30px;
+    }
+    
+    .azul{
+        color: rgb(0, 162, 255);
+        position: relative;
+    }
+    
+    ._{
+        color: transparent;
+        margin-left: -40px;
+        background-color: transparent;
+    }
+    
+    span{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border-radius: 30px;
+        padding-left: 20px;
+        padding-right: 15px;
+        font-size: 25px;
+    }
+    
+    /* botão de testar vistoria */
+    
+    #testar{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border-radius: 30px;
+        font-size: 23px;
+        height: 57px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+        transition: 0.2s ease;
+        border: solid 2px rgb(0, 162, 255);
+    
+        &:hover{
+            background-color: white;
+            color: rgb(0, 162, 255);
+        }
+    }
+
+    .card{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        margin-top: 100px;
+        left: 0;
+        width:80vw;
+    }
+    
+    #idoso{
+        display: none;
+    }
+    
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: justify;
+        height: 300px; 
+        margin-left: 0px;
+    
+        & h1{
+            color: rgb(0, 162, 255);
+            font-size: 30px;
+            margin-bottom:30px;
+        }
+    
+        & p{
+            color: black;
+            font-weight: 500;
+            font-size: 20px;
+        }
+    
+        & a{
+            color: rgb(0, 162, 255);
+            font-size: 30px;
+            text-align: right;
+        }
+    }
+}

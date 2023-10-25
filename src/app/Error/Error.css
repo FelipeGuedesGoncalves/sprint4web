@@ -1,0 +1,13 @@
+#mainErro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+
+}
+
+#erro{
+    font-size: 40px;
+    padding: 50px;
+
+}

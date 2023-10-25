@@ -1,0 +1,245 @@
+.h1planos{
+    color: rgb(0, 162, 255);
+    left: none;
+    margin-left: none;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.artplanos{
+    margin: 0;
+    left: 0;
+    position: relative;
+}
+
+#planos{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    left: 0;
+    margin-bottom: 200px;
+}
+
+.plano{
+    background-color: rgb(0, 162, 255);
+    width: 350px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.nomePlano{
+    color: white;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.preco{
+    color: white;
+    font-size: 40px;
+}
+
+.aoano{
+    font-weight: 100;
+    color: white;
+    font-size: 30px;
+}
+
+.recursos{
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    align-items: center;
+}
+
+.checkbox{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    padding: 0px;
+}
+
+.cobertura{
+    color: white;
+    font-size: 18px;
+    font-weight: 300px;
+    display: flex;
+    text-align: justify;
+    padding: 20px;
+}
+
+.adquirir{
+    background-color: white;
+    color: rgb(0, 162, 255);
+    display: flex;
+    position: relative;
+    height: 50px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border-radius: 17px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    transition: 0.2s ease;
+    border: 2.5px solid white;
+
+    &:hover{
+        color: white;
+        background-color: rgb(0, 162, 255);
+        border: 2.5px solid white;
+    }
+}
+
+/* ============ DESKTOP ============= */
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    #planos{
+        flex-direction: column;
+    }
+
+    .plano{
+        width: 70vw;
+        align-items: normal;
+        padding-left: 50px;
+        margin-bottom: 60px;
+    }
+
+    .artplanos{
+        margin-bottom: -40px;
+        margin-top: -40px;
+        left: 0;
+        position: relative;
+    }
+
+    .checkbox{
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+    }
+    
+    .cobertura{
+        color: white;
+        font-size: 18px;
+        font-weight: 300px;
+        display: flex;
+        text-align: justify;
+        padding: 16px;
+    }
+
+    .adquirir{
+        width: 24vw;
+        margin-top: 0px;
+        margin-left: 400px;
+        margin-bottom: 25px;
+        transition: 0.2s ease;
+        border: 2.5px solid white;
+    }
+
+}
+
+/* ============ TABLET ============= */
+
+@media (min-width: 0px) and (max-width: 1023.99px) {
+    #planos{
+        flex-direction: column;
+    }
+
+    .plano{
+        width: 70vw;
+        align-items: normal;
+        padding-left: 50px;
+        margin-bottom: 60px;
+    }
+
+    .nomePlano{
+        font-size: 35px;
+    }
+    
+    .preco{
+        color: white;
+        font-size: 35px;
+    }
+    
+    .aoano{
+        font-weight: 100;
+        color: white;
+        font-size: 30px;
+    }
+
+    .artplanos{
+        margin-bottom: -40px;
+        margin-top: -40px;
+        left: 0;
+        position: relative;
+    }
+
+    .checkbox{
+        width: 30px;
+        height: 30px;
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .cobertura{
+        color: white;
+        font-size: 16px;
+        font-weight: 300px;
+        display: flex;
+        text-align: justify;
+        padding: 16px;
+        align-items: center;
+        height: 50px;
+        width: 70%;
+        left: 0;
+    }
+
+    .adquirir{
+        width: 24vw;
+        margin-top: 0px;
+        float: right;
+        margin-bottom: 40px;
+        transition: 0.2s ease;
+        border: 2.5px solid white;
+        
+    }
+
+}
+
+/* ============ MOBILE ============= */
+
+@media (min-width: 0px) and (max-width: 767.99px) {
+    .plano{
+        width: 70vw;
+        align-items: center;
+        padding-left: 0px;
+        margin-bottom: 60px;
+        left: 0;
+    }
+
+    .artplanos{
+        width: 80%;
+    }
+
+    .recursos{
+        left: 0;
+        margin: 0;
+        text-align: justify;
+        font-size: 10px;
+    }
+
+    .cobertura{
+        text-align: justify;
+        width: fit-content;
+    }
+
+}
