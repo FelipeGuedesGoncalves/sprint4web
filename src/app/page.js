@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import './Home.css'
-import IdosoBike from "/src/assets/IdosoBike.jpg"
 
 export default function Home() {
 
@@ -14,7 +13,7 @@ export default function Home() {
                 </section>
             </header>
             <section className="card">
-                <img id='idoso' src={IdosoBike} alt="" />
+                <img id='idoso' src="/IdosoBike.jpg" alt="" />
                 <article className='arthome'>
                     <h1>A Porto não mede esforços!</h1>
                     <p id='textoCard'>Atendemos todos os tipos de bicicletas e oferecemos uma variedade de planos de seguro para garantir a proteção necessária, proporcionando segurança e tranquilidade aos ciclistas.</p>
