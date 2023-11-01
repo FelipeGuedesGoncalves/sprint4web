@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import './Bike.css';
-import semImagem from '/src/assets/imagem_ausente2.png';
-import mudarFoto from '/src/assets/mudar-foto.png';
 
 export default function Perfil() {
   const [perfilData, setPerfilData] = useState({
@@ -16,7 +14,7 @@ export default function Perfil() {
 
   const [inputsBloqueados, setInputsBloqueados] = useState(true); // Inicialmente, os inputs estão bloqueados
   const [nomeExibido, setNomeExibido] = useState('Bike 1'); // Nome fictício para bicicleta
-  const [imagemPerfil, setImagemPerfil] = useState(semImagem); // Estado para a imagem da bicicleta
+  const [imagemPerfil, setImagemPerfil] = useState('imagem_ausente2.png'); // Estado para a imagem da bicicleta
 
   const handleInputChange = (event, campo) => {
     if (!inputsBloqueados) {
@@ -58,7 +56,7 @@ export default function Perfil() {
                 disabled={inputsBloqueados}
                 style={{ display: 'none' }}
               />
-              <img className="imagemPerfilBike" src={mudarFoto} alt="foto da bicicleta" />
+              <img className="imagemPerfilBike" src={'mudar-foto.png'} alt="foto da bicicleta" />
             </label>
           ) : (
             <img className="imagemPerfilBike" src={imagemPerfil} alt="foto da bicicleta" />

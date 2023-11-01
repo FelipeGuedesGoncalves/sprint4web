@@ -64,7 +64,7 @@ footer{
   background-color: rgb(0, 162, 255);
 }
 
-#textoFooter{
+.textoFooter{
   height: 10vh;
   width: 60vh;
   font-size: 15px;
@@ -73,7 +73,7 @@ footer{
   color: white;
 }
 
-#linha{
+.linha{
   height: 9vh;
   width: 2px;
   background-color: white;
@@ -81,12 +81,23 @@ footer{
   margin-right: 2vh;
 }
 
-#logoPortoF{
-  width: 27.5vh;
+.logoPortoF{
+  background-image: url(/portologo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 12vh;
+  width: 16vw;
 }
 
-#fiapBranco{
+.fiapBranco{
   width: 20vh;
+  background-image: url(/fiapbranco.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 4vh;
+  width: 10vw;
 }
 
 /* ============ DESKTOP ============= */

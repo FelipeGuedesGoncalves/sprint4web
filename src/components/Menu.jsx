@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from '../app/globals.css';
 
+
 export default function Menu() {
   return (
     <nav className={styles.navmenu}>

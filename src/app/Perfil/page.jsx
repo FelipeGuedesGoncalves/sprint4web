@@ -2,8 +2,6 @@
 
 import React, { useState } from 'react';
 import './Perfil.css';
-import semImagem from '/src/assets/imagem_ausente2.png';
-import mudarFoto from '/src/assets/mudar-foto.png'
 
 export default function Perfil() {
   const [perfilData, setPerfilData] = useState({
@@ -19,7 +17,7 @@ export default function Perfil() {
 
   const [inputsBloqueados, setInputsBloqueados] = useState(true); // Inicialmente, os inputs estão bloqueados
   const [nomeExibido, setNomeExibido] = useState('Cliente Porto'); // Estado para controlar o nome exibido
-  const [imagemPerfil, setImagemPerfil] = useState(semImagem); // Estado para a imagem de perfil
+  const [imagemPerfil, setImagemPerfil] = useState('imagem_ausente2.png'); // Estado para a imagem de perfil
 
   const handleInputChange = (event, campo) => {
     if (!inputsBloqueados) {
@@ -67,7 +65,7 @@ export default function Perfil() {
                 disabled={inputsBloqueados}
                 style={{ display: 'none' }}
               />
-              <img className="imagemPerfil" src={mudarFoto} alt="foto de perfil" />
+              <img className="imagemPerfil" src={'mudar-foto.png'} alt="foto de perfil" />
             </label>
           ) : (
             <img className="imagemPerfil" src={imagemPerfil} alt="foto de perfil" />

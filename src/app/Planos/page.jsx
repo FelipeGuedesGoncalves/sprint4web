@@ -1,5 +1,3 @@
-import rightwhite from "/src/assets/rightwhite.png"
-import wrongwhite from "/src/assets/wrongwhite.png"
 import './Planos.css'
 
 export default function Planos(){
@@ -12,9 +10,9 @@ export default function Planos(){
                     <h2 className="nomePlano">Pedal Essencial</h2>
                     <h3 className="preco">$2000 <span className="aoano">/a.a</span></h3>
                     <article className="artplanos">
-                        <section className="recursos"><img className="checkbox" src={rightwhite} alt="presente" /><p className="cobertura basica">Cobertura básica contra roubo e furto.</p></section>
-                        <section className="recursos"><img className="checkbox" src={wrongwhite} alt="ausente" /><p className="cobertura intermediario">Cobertura contra danos acidentais.</p></section>
-                        <section className="recursos"><img className="checkbox" src={wrongwhite} alt="ausente" /><p className="cobertura Premium">Cobertura contra terceiros em caso de acidentes.</p></section>
+                        <section className="recursos"><img className="checkbox" src="rightwhite.png" alt="presente" /><p className="cobertura basica">Cobertura básica contra roubo e furto.</p></section>
+                        <section className="recursos"><img className="checkbox" src="wrongwhite.png" alt="ausente" /><p className="cobertura intermediario">Cobertura contra danos acidentais.</p></section>
+                        <section className="recursos"><img className="checkbox" src="wrongwhite.png" alt="ausente" /><p className="cobertura Premium">Cobertura contra terceiros em caso de acidentes.</p></section>
                     </article>
                     <button className="adquirir">Adquirir</button>
 
@@ -23,9 +21,9 @@ export default function Planos(){
                     <h2 className="nomePlano">Pedal Leve</h2>
                     <h3 className="preco">$5000 <span className="aoano">/a.a</span></h3>
                     <article className="artplanos">
-                        <section className="recursos"><img className="checkbox" src={rightwhite} alt="presente" /><p className="cobertura basica">Cobertura básica contra roubo e furto.</p></section>
-                        <section className="recursos"><img className="checkbox" src={rightwhite} alt="presente" /><p className="cobertura intermediario">Cobertura contra danos acidentais.</p></section>
-                        <section className="recursos"><img className="checkbox" src={wrongwhite} alt="ausente" /><p className="cobertura Premium">Cobertura contra terceiros em caso de acidentes.</p></section>
+                        <section className="recursos"><img className="checkbox" src="rightwhite.png" alt="presente" /><p className="cobertura basica">Cobertura básica contra roubo e furto.</p></section>
+                        <section className="recursos"><img className="checkbox" src="rightwhite.png" alt="presente" /><p className="cobertura intermediario">Cobertura contra danos acidentais.</p></section>
+                        <section className="recursos"><img className="checkbox" src="wrongwhite.png" alt="ausente" /><p className="cobertura Premium">Cobertura contra terceiros em caso de acidentes.</p></section>
                     </article>
                     <button className="adquirir">Adquirir</button>
 
@@ -34,9 +32,9 @@ export default function Planos(){
                     <h2 className="nomePlano">Pedal Elite</h2>
                     <h3 className="preco">$10000 <span className="aoano">/a.a</span></h3>
                     <article className="artplanos">
-                        <section className="recursos"><img className="checkbox" src={rightwhite} alt="presente" /><p className="cobertura basica">Cobertura básica contra roubo e furto.</p></section>
-                        <section className="recursos"><img className="checkbox" src={rightwhite} alt="presente" /><p className="cobertura intermediario">Cobertura contra danos acidentais.</p></section>
-                        <section className="recursos"><img className="checkbox" src={rightwhite} alt="presente" /><p className="cobertura Premium">Cobertura contra terceiros em caso de acidentes.</p></section>
+                        <section className="recursos"><img className="checkbox" src="rightwhite.png" alt="presente" /><p className="cobertura basica">Cobertura básica contra roubo e furto.</p></section>
+                        <section className="recursos"><img className="checkbox" src="rightwhite.png" alt="presente" /><p className="cobertura intermediario">Cobertura contra danos acidentais.</p></section>
+                        <section className="recursos"><img className="checkbox" src="rightwhite.png" alt="presente" /><p className="cobertura Premium">Cobertura contra terceiros em caso de acidentes.</p></section>
                     </article>
                     <button className="adquirir">Adquirir</button>
 

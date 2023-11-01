@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import './MinhasBicicletas.css'
-import semImagem from "/src/assets/sem_imagem.png"
 
 export default function MinhasBicicletas() {
 
@@ -11,7 +10,7 @@ export default function MinhasBicicletas() {
 
             <section className='bike'>
                 <div className='fotoPerfilBike'>
-                    <img className='imagemBike' src={semImagem} alt="foto da bike" />
+                    <img className='imagemBike' src={"sem_imagem.png"} alt="foto da bike" />
                     <h3 className='nomeBike'>Bicicleta 1</h3>
                 </div>
                 <section className='infos'>

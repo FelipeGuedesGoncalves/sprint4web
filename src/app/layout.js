@@ -1,5 +1,10 @@
 import Menu from "@/components/Menu"
 import Rodape from "@/components/Rodape"
+import { Outfit } from "next/font/google";
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['100','300','500','700','900']
+});
 
 export const metadata = {
   title: 'Next.js',
@@ -9,10 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
-      <body>
+      <body className={outfit.className}>
         <Menu/>
-        {children}</body>
+        {children}
         <Rodape/>
+      </body>
     </html>
   )
 }
