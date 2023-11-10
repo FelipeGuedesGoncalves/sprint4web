@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import './Home.css'
+import './Home.scss'
 
 export default function Home() {
 
@@ -9,7 +9,7 @@ export default function Home() {
                 <section className='sechome'>
                     <h1 className='h1home'>Quem tem Porto, tem mais tranquilidade para pedalar</h1>
                     <h1 className='h1home azul'>Experimente nossa mais nova ferramenta <span>100%<span className='_'>_</span>DIGITAL</span> de vistoria</h1>
-                    <Link id='testar' href="/vistoria">Testar agora mesmo!</Link>
+                    <Link id='testar' href="/Vistoria">Testar agora mesmo!</Link>
                 </section>
             </header>
             <section className="card">
@@ -17,7 +17,7 @@ export default function Home() {
                 <article className='arthome'>
                     <h1>A Porto não mede esforços!</h1>
                     <p id='textoCard'>Atendemos todos os tipos de bicicletas e oferecemos uma variedade de planos de seguro para garantir a proteção necessária, proporcionando segurança e tranquilidade aos ciclistas.</p>
-                    <a id='confPlano' href="/planos">Confira nossos planos!</a>
+                    <a id='confPlano' href="/Planos">Confira nossos planos!</a>
                 </article>
             </section>
             <section className="card integrantes">

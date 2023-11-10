@@ -1,0 +1,12 @@
+{
+  "perfil": {
+    "nm_completo": "Felipe Guedes Gonçalves",
+    "telefone": "0000999-33",
+    "email": "felipeguedes@gmail.com",
+    "genero": "Masculino",
+    "dataNascimento": "2012-09-04",
+    "cpf": "190283746018972346",
+    "endereco": "jd meeeeeeeeeeeeeee",
+    "imagemPerfil": "blob:http://localhost:3000/e2ffaa65-e90c-4453-ae03-39cb723bf0bf"
+  }
+}

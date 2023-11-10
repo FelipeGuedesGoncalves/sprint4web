@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import './Bike.css';
+import './Bike.scss';
 
 export default function Perfil() {
   const [perfilData, setPerfilData] = useState({

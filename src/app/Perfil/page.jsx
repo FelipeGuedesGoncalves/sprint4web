@@ -1,23 +1,37 @@
-'use client'
+"use client"
+// ======= IMPORTAÇÕES E ESTILO DO COMPONENTE =======
 
-import React, { useState } from 'react';
-import './Perfil.css';
+import React, { useState, useEffect } from 'react';
+import './Perfil.scss';
 
 export default function Perfil() {
   const [perfilData, setPerfilData] = useState({
-    nome: '',
-    sobrenome: '',
+    nm_completo: '',
     telefone: '',
     email: '',
     genero: '',
     dataNascimento: '',
     cpf: '',
     endereco: '',
+    imagemPerfil: '/imagem_ausente2.png', // caminho relativo da imagem
   });
 
-  const [inputsBloqueados, setInputsBloqueados] = useState(true); // Inicialmente, os inputs estão bloqueados
-  const [nomeExibido, setNomeExibido] = useState('Cliente Porto'); // Estado para controlar o nome exibido
-  const [imagemPerfil, setImagemPerfil] = useState('imagem_ausente2.png'); // Estado para a imagem de perfil
+  const [inputsBloqueados, setInputsBloqueados] = useState(true);
+  const [nm_completoExibido, setnm_completoExibido] = useState('Cliente Porto');
+
+  useEffect(() => {
+    fetch('http://localhost:3001/perfil')
+      .then(resp => resp.json())
+      .then(resp => {
+        if (Object.keys(resp).length === 0) {
+          setnm_completoExibido('Cliente Porto');
+        } else {
+          setnm_completoExibido(resp.nm_completo);
+          setPerfilData(resp);
+        }
+      })
+      .catch(error => console.error(error));
+  }, []);
 
   const handleInputChange = (event, campo) => {
     if (!inputsBloqueados) {
@@ -33,7 +47,7 @@ export default function Perfil() {
 
   const handleImagemChange = (event) => {
     const novaImagem = URL.createObjectURL(event.target.files[0]);
-    setImagemPerfil(novaImagem);
+    setPerfilData({ ...perfilData, imagemPerfil: novaImagem });
   };
 
   const handleBloquearInputs = () => {
@@ -45,9 +59,21 @@ export default function Perfil() {
   };
 
   const handleSalvar = () => {
-    setNomeExibido(perfilData.nome); // Atualiza o nome exibido com o valor do input 'nome'
+    fetch('http://localhost:3001/perfil', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(perfilData),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Perfil salvo com sucesso:', data);
+      })
+      .catch(error => console.error('Erro ao salvar perfil:', error));
+
+    setnm_completoExibido(perfilData.nm_completo);
     setInputsBloqueados(true);
-    // Adicione aqui qualquer lógica necessária para salvar os dados, incluindo a imagem.
   };
 
   return (
@@ -65,12 +91,12 @@ export default function Perfil() {
                 disabled={inputsBloqueados}
                 style={{ display: 'none' }}
               />
-              <img className="imagemPerfil" src={'mudar-foto.png'} alt="foto de perfil" />
+              <img className="imagemPerfil" src={'/mudar-foto.png'} alt="foto de perfil" />
             </label>
           ) : (
-            <img className="imagemPerfil" src={imagemPerfil} alt="foto de perfil" />
+            <img className="imagemPerfil" src={perfilData.imagemPerfil} alt="foto de perfil" />
           )}
-          <h3 className="nomePerfil">{nomeExibido}</h3>
+          <h3 className="nm_completoPerfil">{nm_completoExibido}</h3>
           <div className='btns'>
             {inputsBloqueados ? (
               <button className='btnPerfil' onClick={handleDesbloquearInputs}>Editar</button>
@@ -82,126 +108,111 @@ export default function Perfil() {
             )}
           </div>
         </div>
+
         <section className="infosPerfil">
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">Nome</h3>
-                        <input
-                            className="textoPerfil"
-                            type="text"
-                            value={perfilData.nome}
-                            onChange={(e) => handleInputChange(e, 'nome')}
-                            placeholder="-"
-                            disabled={inputsBloqueados}
-                        />
-                    </article>
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">Sobrenome</h3>
-                        <input
-                            className="textoPerfil"
-                            type="text"
-                            value={perfilData.sobrenome}
-                            onChange={(e) => handleInputChange(e, 'sobrenome')}
-                            placeholder="-"
-                            disabled={inputsBloqueados}
-                        />
-                    </article>
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">Telefone</h3>
-                        <input
-                            className="textoPerfil"
-                            type="text"
-                            value={perfilData.telefone}
-                            onChange={(e) => handleInputChange(e, 'telefone')}
-                            placeholder="-"
-                            disabled={inputsBloqueados}
-                        />
-                    </article>
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">Email</h3>
-                        <input
-                            className="textoPerfil"
-                            type="text"
-                            value={perfilData.email}
-                            onChange={(e) => handleInputChange(e, 'email')}
-                            placeholder="-"
-                            disabled={inputsBloqueados}
-                        />
-                    </article>
-                    {/* Seção de Gênero */}
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">Gênero</h3>
-                        <div className='generos'>
-                            <label className='checkBoxGen'>
-                                Masculino
-                                <input
-                                    type="checkbox"
-                                    value="Masculino"
-                                    checked={perfilData.genero === 'Masculino'}
-                                    onChange={handleGeneroChange}
-                                    disabled={inputsBloqueados}
-                                />
-                            </label>
-                            <label className='checkBoxGen'>
-                                Feminino
-                                <input
-                                    type="checkbox"
-                                    value="Feminino"
-                                    checked={perfilData.genero === 'Feminino'}
-                                    onChange={handleGeneroChange}
-                                    disabled={inputsBloqueados}
-                                />
-                            </label>
-                            <label className='checkBoxGen'>
-                                Outro
-                                <input
-                                    type="checkbox"
-                                    value="Outro"
-                                    checked={perfilData.genero === 'Outro'}
-                                    onChange={handleGeneroChange}
-                                    disabled={inputsBloqueados}
-                                />
-                            </label>
-                        </div>
-                    </article>
-                    {/* Fim da Seção de Gênero */}
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">Data de Nascimento</h3>
-                        <input
-                            className="textoPerfil"
-                            type="text"
-                            value={perfilData.dataNascimento}
-                            onChange={(e) => handleInputChange(e, 'dataNascimento')}
-                            placeholder="-"
-                            disabled={inputsBloqueados}
-                        />
-                    </article>
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">CPF</h3>
-                        <input
-                            className="textoPerfil"
-                            type="text"
-                            value={perfilData.cpf}
-                            onChange={(e) => handleInputChange(e, 'cpf')}
-                            placeholder="-"
-                            disabled={inputsBloqueados}
-                        />
-                    </article>
-                    <article className="infoPerfil">
-                        <h3 className="secaoPerfil">Endereço</h3>
-                        <input
-                            className="textoPerfil"
-                            type="text"
-                            value={perfilData.endereco}
-                            onChange={(e) => handleInputChange(e, 'endereco')}
-                            placeholder="-"
-                            disabled={inputsBloqueados}
-                        />
-                    </article>
-                </section>
-            </section>
-
-        </main>
-    );
+          <article className="infoPerfil">
+            <h3 className="secaoPerfil">Nome Completo</h3>
+            <input
+              className="textoPerfil"
+              type="text"
+              value={perfilData.nm_completo}
+              onChange={(e) => handleInputChange(e, 'nm_completo')}
+              placeholder="-"
+              disabled={inputsBloqueados}
+            />
+          </article>
+          <article className="infoPerfil">
+            <h3 className="secaoPerfil">Telefone</h3>
+            <input
+              className="textoPerfil"
+              type="tel"
+              value={perfilData.telefone}
+              onChange={(e) => handleInputChange(e, 'telefone')}
+              placeholder="-"
+              disabled={inputsBloqueados}
+            />
+          </article>
+          <article className="infoPerfil">
+            <h3 className="secaoPerfil">Email</h3>
+            <input
+              className="textoPerfil"
+              type="email"
+              value={perfilData.email}
+              onChange={(e) => handleInputChange(e, 'email')}
+              placeholder="-"
+              disabled={inputsBloqueados}
+            />
+          </article>
+          <article className="infoPerfil">
+            <h3 className="secaoPerfil">Gênero</h3>
+            <div className='generos'>
+              <label className='checkBoxGen'>
+                Masculino
+                <input
+                  type="checkbox"
+                  value="Masculino"
+                  checked={perfilData.genero === 'Masculino'}
+                  onChange={handleGeneroChange}
+                  disabled={inputsBloqueados}
+                />
+              </label>
+              <label className='checkBoxGen'>
+                Feminino
+                <input
+                  type="checkbox"
+                  value="Feminino"
+                  checked={perfilData.genero === 'Feminino'}
+                  onChange={handleGeneroChange}
+                  disabled={inputsBloqueados}
+                />
+              </label>
+              <label className='checkBoxGen'>
+                Outro
+                <input
+                  type="checkbox"
+                  value="Outro"
+                  checked={perfilData.genero === 'Outro'}
+                  onChange={handleGeneroChange}
+                  disabled={inputsBloqueados}
+                />
+              </label>
+            </div>
+          </article>
+          <article className="infoPerfil">
+            <h3 className="secaoPerfil">Data de Nascimento</h3>
+            <input
+              className="textoPerfil"
+              type="date"
+              value={perfilData.dataNascimento}
+              onChange={(e) => handleInputChange(e, 'dataNascimento')}
+              placeholder="-"
+              disabled={inputsBloqueados}
+            />
+          </article>
+          <article className="infoPerfil">
+            <h3 className="secaoPerfil">CPF</h3>
+            <input
+              className="textoPerfil"
+              type="text"
+              value={perfilData.cpf}
+              onChange={(e) => handleInputChange(e, 'cpf')}
+              placeholder="-"
+              disabled={inputsBloqueados}
+            />
+          </article>
+          <article className="infoPerfil">
+            <h3 className="secaoPerfil">Endereço</h3>
+            <input
+              className="textoPerfil"
+              type="text"
+              value={perfilData.endereco}
+              onChange={(e) => handleInputChange(e, 'endereco')}
+              placeholder="-"
+              disabled={inputsBloqueados}
+            />
+          </article>
+        </section>
+      </section>
+    </main>
+  );
 }
-
-

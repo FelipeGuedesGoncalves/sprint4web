@@ -1,4 +1,4 @@
-import './Planos.css'
+import './Planos.scss'
 
 export default function Planos(){
 

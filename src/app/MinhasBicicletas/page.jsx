@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import './MinhasBicicletas.css'
+import './MinhasBicicletas.scss'
 
 export default function MinhasBicicletas() {
 
