@@ -9,7 +9,7 @@ export default function MinhasBicicletas() {
 
   useEffect(() => {
     // Simula a busca de bicicletas do servidor
-    fetch(`http://localhost:5000/bicicleta`)
+    fetch(`http://localhost:3001/bicicletas`)
       .then(resp => resp.json())
       .then(resp => setBicicletas(resp))
       .catch(error => console.error(error));
@@ -17,7 +17,7 @@ export default function MinhasBicicletas() {
 
   const handleDelete = (id) => {
     // Simula a exclusão de uma bicicleta no servidor
-    fetch(`http://localhost:5000/bicicleta/${id}`, {
+    fetch(`http://localhost:3001/bicicletas/${id}`, {
       method: 'delete'
     })
       .then(window.location = '/')
@@ -49,7 +49,7 @@ export default function MinhasBicicletas() {
             </article>
             <Link className='mais' href={`/Bike/${bicicleta.id}`}>Ver Mais</Link>
           </section>
-          <button className='addBike' onClick={() => handleDelete(bicicleta.id)}><FaTrash />Excluir</button>
+          <button className='addBike' onClick={() => handleDelete(bicicleta.id)}>Excluir</button>
         </section>
       ))}
 

@@ -1,30 +1,36 @@
-'use client'
+"use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from "react"
 import './Bike.scss';
 
-export default function Perfil() {
-  const [perfilData, setPerfilData] = useState({
+export default function BikeForm({ params }) {
+  const bikeId = params.id == 0 ? '' : params.id;
+
+  const [bikeData, setBikeData] = useState({
     nome: '',
     numeroSerie: '',
     acessorios: '',
     modelo: '',
     marca: '',
+    imagem: 'sem_imagem.png'
   });
 
-  const [inputsBloqueados, setInputsBloqueados] = useState(true); // Inicialmente, os inputs estão bloqueados
-  const [nomeExibido, setNomeExibido] = useState('Bike 1'); // Nome fictício para bicicleta
-  const [imagemPerfil, setImagemPerfil] = useState('imagem_ausente2.png'); // Estado para a imagem da bicicleta
+  let metodo = 'post'
+  if(bikeId) metodo = 'put'
+
+  const [inputsBloqueados, setInputsBloqueados] = useState(true);
 
   const handleInputChange = (event, campo) => {
     if (!inputsBloqueados) {
-      setPerfilData({ ...perfilData, [campo]: event.target.value });
+      setBikeData({ ...bikeData, [campo]: event.target.value });
     }
   };
 
   const handleImagemChange = (event) => {
-    const novaImagem = URL.createObjectURL(event.target.files[0]);
-    setImagemPerfil(novaImagem);
+    if (!inputsBloqueados) {
+      const novaImagem = URL.createObjectURL(event.target.files[0]);
+      setBikeData({ ...bikeData, imagem: novaImagem });
+    }
   };
 
   const handleBloquearInputs = () => {
@@ -36,10 +42,39 @@ export default function Perfil() {
   };
 
   const handleSalvar = () => {
-    setNomeExibido(perfilData.nome); // Atualiza o nome exibido com o valor do input 'nome'
-    setInputsBloqueados(true);
-    // Adicione aqui qualquer lógica necessária para salvar os dados, incluindo a imagem.
+    if (bikeId) {
+      // Se existe um ID, então é uma bicicleta existente e precisamos fazer um pedido PUT
+      fetch(`http://localhost:3001/bicicletas/${bikeId}`, {
+        method: 'put',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bikeData)
+      })
+        .then(() => {
+          setInputsBloqueados(true);
+        })
+        .catch(error => console.error(error));
+    } else {
+      // Se não existe um ID, então é uma nova bicicleta e precisamos fazer um pedido POST
+      fetch('http://localhost:3001/bicicletas', {
+        method: 'post',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bikeData)
+      })
+        .then(() => {
+          setInputsBloqueados(true);
+        })
+        .catch(error => console.error(error));
+    }
   };
+
+  useEffect(() => {
+    if (bikeId) {
+      fetch(`http://localhost:3001/bicicletas/${bikeId}`)
+        .then(resp => resp.json())
+        .then(resp => setBikeData(resp))
+        .catch(error => console.error(error))
+    }
+  }, [bikeId]);
 
   return (
     <main>
@@ -56,12 +91,12 @@ export default function Perfil() {
                 disabled={inputsBloqueados}
                 style={{ display: 'none' }}
               />
-              <img className="imagemPerfilBike" src={'mudar-foto.png'} alt="foto da bicicleta" />
+              <img className="imagemPerfilBike" src={bikeData.imagem} alt="foto da bicicleta" />
             </label>
           ) : (
-            <img className="imagemPerfilBike" src={imagemPerfil} alt="foto da bicicleta" />
+            <img className="imagemPerfilBike" src={bikeData.imagem} alt="foto da bicicleta" />
           )}
-          <h3 className="nomePerfilBike">{nomeExibido}</h3>
+          <h3 className="nomePerfilBike">{bikeData.nome || 'Bike'}</h3>
           <div className='btns'>
             {inputsBloqueados ? (
               <button className='btnPerfil' onClick={handleDesbloquearInputs}>Editar</button>
@@ -79,7 +114,7 @@ export default function Perfil() {
             <input
               className="textoPerfilBike"
               type="text"
-              value={perfilData.nome}
+              value={bikeData.nome}
               onChange={(e) => handleInputChange(e, 'nome')}
               placeholder="-"
               disabled={inputsBloqueados}
@@ -90,7 +125,7 @@ export default function Perfil() {
             <input
               className="textoPerfilBike"
               type="text"
-              value={perfilData.numeroSerie}
+              value={bikeData.numeroSerie}
               onChange={(e) => handleInputChange(e, 'numeroSerie')}
               placeholder="-"
               disabled={inputsBloqueados}
@@ -101,7 +136,7 @@ export default function Perfil() {
             <input
               className="textoPerfilBike"
               type="text"
-              value={perfilData.acessorios}
+              value={bikeData.acessorios}
               onChange={(e) => handleInputChange(e, 'acessorios')}
               placeholder="-"
               disabled={inputsBloqueados}
@@ -112,7 +147,7 @@ export default function Perfil() {
             <input
               className="textoPerfilBike"
               type="text"
-              value={perfilData.modelo}
+              value={bikeData.modelo}
               onChange={(e) => handleInputChange(e, 'modelo')}
               placeholder="-"
               disabled={inputsBloqueados}
@@ -123,7 +158,7 @@ export default function Perfil() {
             <input
               className="textoPerfilBike"
               type="text"
-              value={perfilData.marca}
+              value={bikeData.marca}
               onChange={(e) => handleInputChange(e, 'marca')}
               placeholder="-"
               disabled={inputsBloqueados}
@@ -131,8 +166,6 @@ export default function Perfil() {
           </article>
         </section>
       </section>
-      
-      {/* Botões */}
     </main>
   );
 }
