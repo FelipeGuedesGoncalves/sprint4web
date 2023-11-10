@@ -7,17 +7,35 @@
     "dataNascimento": "2012-09-04",
     "cpf": "190283746018972346",
     "endereco": "jd meeeeeeeeeeeeeee",
-    "imagemPerfil": "blob:http://localhost:3000/a2cd7fee-e4d9-4e40-aa28-24d3148df63d"
+    "imagemPerfil": "blob:http://localhost:3000/62d27a28-b467-491c-9b16-91ab912572a7"
   },
   "bicicletas": [
     {
-      "id": 1,
-      "nome": "Alberto",
-      "numeroSerie": "0000000",
-      "acessorios": "rola e cu grande",
-      "modelo": "transante",
-      "marca": "marca penis",
-      "imagem": "imagem1.jpg"
+      "nome": "",
+      "numeroSerie": "",
+      "acessorios": "",
+      "modelo": "",
+      "marca": "",
+      "imagem": "sem_imagem.png",
+      "id": 2
+    },
+    {
+      "nome": "",
+      "numeroSerie": "",
+      "acessorios": "",
+      "modelo": "",
+      "marca": "",
+      "imagem": "sem_imagem.png",
+      "id": 3
+    },
+    {
+      "nome": "",
+      "numeroSerie": "",
+      "acessorios": "",
+      "modelo": "",
+      "marca": "",
+      "imagem": "sem_imagem.png",
+      "id": 4
     }
   ]
 }

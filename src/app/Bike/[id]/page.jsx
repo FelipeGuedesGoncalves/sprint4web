@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import './Bike.scss';
 
 export default function BikeForm({ params }) {
@@ -15,10 +15,10 @@ export default function BikeForm({ params }) {
     imagem: 'sem_imagem.png'
   });
 
-  let metodo = 'post'
-  if(bikeId) metodo = 'put'
+  let metodo = 'post';
+  if (bikeId) metodo = 'put';
 
-  const [inputsBloqueados, setInputsBloqueados] = useState(true);
+  const [inputsBloqueados, setInputsBloqueados] = useState(metodo === 'put');
 
   const handleInputChange = (event, campo) => {
     if (!inputsBloqueados) {
@@ -41,6 +41,22 @@ export default function BikeForm({ params }) {
     setInputsBloqueados(false);
   };
 
+  const handleExcluir = () => {
+    if (!inputsBloqueados && bikeId) {
+      const confirmacao = window.confirm("Tem certeza de que deseja excluir esta bicicleta?");
+      if (confirmacao) {
+        fetch(`http://localhost:3001/bicicletas/${bikeId}`, {
+          method: 'delete'
+        })
+          .then(() => {
+            window.location = '/MinhasBicicletas';
+          })
+          .catch(error => console.error(error));
+      }
+      // Se o usuário clicar em "Cancelar", não fazemos nada.
+    }
+  };
+
   const handleSalvar = () => {
     if (bikeId) {
       // Se existe um ID, então é uma bicicleta existente e precisamos fazer um pedido PUT
@@ -51,6 +67,7 @@ export default function BikeForm({ params }) {
       })
         .then(() => {
           setInputsBloqueados(true);
+          // Se for uma operação PUT, permanece na página atual (não redireciona)
         })
         .catch(error => console.error(error));
     } else {
@@ -62,10 +79,13 @@ export default function BikeForm({ params }) {
       })
         .then(() => {
           setInputsBloqueados(true);
+          // Se for uma operação POST, redireciona para a página "Minhas Bicicletas"
+          window.location = '/MinhasBicicletas';
         })
         .catch(error => console.error(error));
     }
   };
+  
 
   useEffect(() => {
     if (bikeId) {
@@ -104,6 +124,7 @@ export default function BikeForm({ params }) {
               <>
                 <button className='btnPerfil' onClick={handleSalvar}>Salvar</button>
                 <button className='btnPerfil' onClick={handleBloquearInputs}>Cancelar</button>
+                <button className='addBike' onClick={handleExcluir} disabled={inputsBloqueados}>Excluir</button>
               </>
             )}
           </div>

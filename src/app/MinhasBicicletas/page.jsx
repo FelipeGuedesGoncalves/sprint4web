@@ -15,15 +15,6 @@ export default function MinhasBicicletas() {
       .catch(error => console.error(error));
   }, []);
 
-  const handleDelete = (id) => {
-    // Simula a exclusão de uma bicicleta no servidor
-    fetch(`http://localhost:3001/bicicletas/${id}`, {
-      method: 'delete'
-    })
-      .then(window.location = '/')
-      .catch(error => console.error(error));
-  };
-
   return (
     <main>
       <h1 className='h1bikes'>Minhas Bicicletas</h1>
@@ -49,7 +40,6 @@ export default function MinhasBicicletas() {
             </article>
             <Link className='mais' href={`/Bike/${bicicleta.id}`}>Ver Mais</Link>
           </section>
-          <button className='addBike' onClick={() => handleDelete(bicicleta.id)}>Excluir</button>
         </section>
       ))}
 
