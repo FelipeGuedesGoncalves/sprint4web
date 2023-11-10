@@ -7,6 +7,17 @@
     "dataNascimento": "2012-09-04",
     "cpf": "190283746018972346",
     "endereco": "jd meeeeeeeeeeeeeee",
-    "imagemPerfil": "blob:http://localhost:3000/e2ffaa65-e90c-4453-ae03-39cb723bf0bf"
-  }
+    "imagemPerfil": "blob:http://localhost:3000/a2cd7fee-e4d9-4e40-aa28-24d3148df63d"
+  },
+  "bicicletas": [
+    {
+      "id": 1,
+      "nome": "Bicicleta A",
+      "numeroSerie": "123456789",
+      "acessorios": "Campainha, Farol",
+      "modelo": "Mountain Bike",
+      "marca": "Marca A",
+      "imagem": "imagem1.jpg"
+    }
+  ]
 }
