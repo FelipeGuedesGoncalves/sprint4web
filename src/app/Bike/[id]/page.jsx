@@ -12,7 +12,7 @@ export default function BikeForm({ params }) {
     acessorios: '',
     modelo: '',
     marca: '',
-    imagem: 'sem_imagem.png'
+    imagem: '/sem_imagem.png'
   });
 
   let metodo = 'post';
@@ -98,37 +98,46 @@ export default function BikeForm({ params }) {
 
   return (
     <main>
-      <h1 className="h1Perfil">Perfil da Bicicleta</h1>
+      <h1 className="h1PerfilBike">Perfil da Bicicleta</h1>
 
       <section className="perfilBike">
-        <div className="fotoPerfilBike">
-          {!inputsBloqueados ? (
-            <label className="botaoMudarImagemBike">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImagemChange}
-                disabled={inputsBloqueados}
-                style={{ display: 'none' }}
-              />
-              <img className="imagemPerfilBike" src={bikeData.imagem} alt="foto da bicicleta" />
-            </label>
-          ) : (
-            <img className="imagemPerfilBike" src={bikeData.imagem} alt="foto da bicicleta" />
-          )}
-          <h3 className="nomePerfilBike">{bikeData.nome || 'Bike'}</h3>
-          <div className='btns'>
-            {inputsBloqueados ? (
-              <button className='btnPerfil' onClick={handleDesbloquearInputs}>Editar</button>
-            ) : (
-              <>
-                <button className='btnPerfil' onClick={handleSalvar}>Salvar</button>
-                <button className='btnPerfil' onClick={handleBloquearInputs}>Cancelar</button>
-                <button className='addBike' onClick={handleExcluir} disabled={inputsBloqueados}>Excluir</button>
-              </>
-            )}
-          </div>
-        </div>
+      <div className="fotoPerfilBike">
+  {!inputsBloqueados ? (
+    <label className="botaoMudarImagemBike">
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImagemChange}
+        disabled={inputsBloqueados}
+        style={{ display: 'none' }}
+      />
+      <img
+        className="imagemPerfilBike"
+        src={bikeData.imagem || 'mudar-foto.png'}  // Use 'mudar-foto.png' se não houver uma imagem selecionada
+        alt="foto da bicicleta"
+      />
+    </label>
+  ) : (
+    <img
+      className="imagemPerfilBike"
+      src={bikeData.imagem || 'mudar-foto.png'}  // Use 'mudar-foto.png' se não houver uma imagem selecionada
+      alt="foto da bicicleta"
+    />
+  )}
+  <h3 className="nomePerfilBike">{bikeData.nome || 'Bike'}</h3>
+  <div className='btns'>
+    {inputsBloqueados ? (
+      <button className='btnPerfilBike' onClick={handleDesbloquearInputs}>Editar</button>
+    ) : (
+      <>
+        <button className='btnPerfilBike' onClick={handleSalvar}>Salvar</button>
+        <button className='btnPerfilBike' onClick={handleBloquearInputs}>Cancelar</button>
+        <button className='btnPerfilBike' onClick={handleExcluir} disabled={inputsBloqueados}>Excluir</button>
+      </>
+    )}
+  </div>
+</div>
+
         <section className="infosPerfilBike">
           <article className="infoPerfilBike">
             <h3 className="secaoPerfilBike">Nome</h3>
@@ -190,3 +199,4 @@ export default function BikeForm({ params }) {
     </main>
   );
 }
+
