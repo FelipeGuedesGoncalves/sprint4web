@@ -11,13 +11,22 @@
   },
   "bicicletas": [
     {
-      "nome": "ivgerwg",
-      "numeroSerie": "wergwerg",
-      "acessorios": "werg",
-      "modelo": "wergwerg",
-      "marca": "ewrg",
-      "imagem": "/sem_imagem.png",
-      "id": 1
+      "nome": "",
+      "numeroSerie": "",
+      "acessorios": "",
+      "modelo": "",
+      "marca": "",
+      "imagem": "blob:http://localhost:3000/93a8c9b4-1de8-47a9-b825-d2aec4a1656f",
+      "id": 2
+    },
+    {
+      "nome": "",
+      "numeroSerie": "",
+      "acessorios": "",
+      "modelo": "",
+      "marca": "",
+      "imagem": "blob:http://localhost:3000/4505ec81-b089-466f-b866-926998ccf260",
+      "id": 3
     },
     {
       "nome": "",
@@ -26,7 +35,7 @@
       "modelo": "",
       "marca": "",
       "imagem": "/sem_imagem.png",
-      "id": 2
+      "id": 4
     }
   ]
 }

@@ -1,4 +1,4 @@
-import styles from '../app/globals.scss';
+import '../app/globals.scss';
 
 export default function Rodape() {
   return (

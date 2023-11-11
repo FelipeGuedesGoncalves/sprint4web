@@ -85,7 +85,6 @@ export default function BikeForm({ params }) {
         .catch(error => console.error(error));
     }
   };
-  
 
   useEffect(() => {
     if (bikeId) {
@@ -97,106 +96,106 @@ export default function BikeForm({ params }) {
   }, [bikeId]);
 
   return (
-    <main>
-      <h1 className="h1PerfilBike">Perfil da Bicicleta</h1>
+<main>
+  <h1 className="h1PerfilBike">Perfil da Bicicleta</h1>
 
-      <section className="perfilBike">
-      <div className="fotoPerfilBike">
-  {!inputsBloqueados ? (
-    <label className="botaoMudarImagemBike">
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleImagemChange}
-        disabled={inputsBloqueados}
-        style={{ display: 'none' }}
-      />
-      <img
-        className="imagemPerfilBike"
-        src={bikeData.imagem || 'mudar-foto.png'}  // Use 'mudar-foto.png' se não houver uma imagem selecionada
-        alt="foto da bicicleta"
-      />
-    </label>
-  ) : (
-    <img
-      className="imagemPerfilBike"
-      src={bikeData.imagem || 'mudar-foto.png'}  // Use 'mudar-foto.png' se não houver uma imagem selecionada
-      alt="foto da bicicleta"
-    />
-  )}
-  <h3 className="nomePerfilBike">{bikeData.nome || 'Bike'}</h3>
-  <div className='btns'>
-    {inputsBloqueados ? (
-      <button className='btnPerfilBike' onClick={handleDesbloquearInputs}>Editar</button>
-    ) : (
-      <>
-        <button className='btnPerfilBike' onClick={handleSalvar}>Salvar</button>
-        <button className='btnPerfilBike' onClick={handleBloquearInputs}>Cancelar</button>
-        <button className='btnPerfilBike' onClick={handleExcluir} disabled={inputsBloqueados}>Excluir</button>
-      </>
+  <section className="perfilBike">
+    <div className="fotoPerfilBike">
+      {!inputsBloqueados ? (
+        <label className="botaoMudarImagemBike">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImagemChange}
+            disabled={inputsBloqueados}
+            style={{ display: 'none' }}
+          />
+          <img
+            className="mudarimagemPerfilBike"
+            src={'/mudar-foto-bike.png'}  // Use 'mudar-foto.png' se não houver uma imagem selecionada
+            alt="foto da bicicleta"
+          />
+        </label>
+      ) : (
+        <img
+          className="imagemPerfilBike"
+          src={bikeData.imagem}  // Use 'mudar-foto.png' se não houver uma imagem selecionada
+          alt="foto da bicicleta"
+        />
+      )}
+      <h3 className="nomePerfilBike">{bikeData.nome || 'Bike'}</h3>
+      <div className='btns'>
+        {inputsBloqueados ? (
+          <button className='btnPerfilBike' onClick={handleDesbloquearInputs}>Editar</button>
+        ) : (
+          <>
+            <button className='btnPerfilBike' onClick={handleSalvar}>Salvar</button>
+            <button className='btnPerfilBike' onClick={handleBloquearInputs}>Cancelar</button>
+          </>
+        )}
+      </div>
+    </div>
+    <section className="infosPerfilBike">
+      <article className="infoPerfilBike">
+        <h3 className="secaoPerfilBike">Nome</h3>
+        <input
+          className="textoPerfilBike"
+          type="text"
+          value={bikeData.nome}
+          onChange={(e) => handleInputChange(e, 'nome')}
+          placeholder="-"
+          disabled={inputsBloqueados}
+        />
+      </article>
+      <article className="infoPerfilBike">
+        <h3 className="secaoPerfilBike">Número de Série</h3>
+        <input
+          className="textoPerfilBike"
+          type="text"
+          value={bikeData.numeroSerie}
+          onChange={(e) => handleInputChange(e, 'numeroSerie')}
+          placeholder="-"
+          disabled={inputsBloqueados}
+        />
+      </article>
+      <article className="infoPerfilBike">
+        <h3 className="secaoPerfilBike">Acessórios</h3>
+        <input
+          className="textoPerfilBike"
+          type="text"
+          value={bikeData.acessorios}
+          onChange={(e) => handleInputChange(e, 'acessorios')}
+          placeholder="-"
+          disabled={inputsBloqueados}
+        />
+      </article>
+      <article className="infoPerfilBike">
+        <h3 className="secaoPerfilBike">Modelo</h3>
+        <input
+          className="textoPerfilBike"
+          type="text"
+          value={bikeData.modelo}
+          onChange={(e) => handleInputChange(e, 'modelo')}
+          placeholder="-"
+          disabled={inputsBloqueados}
+        />
+      </article>
+      <article className="infoPerfilBike">
+        <h3 className="secaoPerfilBike">Marca</h3>
+        <input
+          className="textoPerfilBike"
+          type="text"
+          value={bikeData.marca}
+          onChange={(e) => handleInputChange(e, 'marca')}
+          placeholder="-"
+          disabled={inputsBloqueados}
+        />
+      </article>
+    {!inputsBloqueados && (
+      <button className='btnPerfilBike excluir' onClick={handleExcluir} disabled={inputsBloqueados}>Excluir</button>
     )}
-  </div>
-</div>
-
-        <section className="infosPerfilBike">
-          <article className="infoPerfilBike">
-            <h3 className="secaoPerfilBike">Nome</h3>
-            <input
-              className="textoPerfilBike"
-              type="text"
-              value={bikeData.nome}
-              onChange={(e) => handleInputChange(e, 'nome')}
-              placeholder="-"
-              disabled={inputsBloqueados}
-            />
-          </article>
-          <article className="infoPerfilBike">
-            <h3 className="secaoPerfilBike">Número de Série</h3>
-            <input
-              className="textoPerfilBike"
-              type="text"
-              value={bikeData.numeroSerie}
-              onChange={(e) => handleInputChange(e, 'numeroSerie')}
-              placeholder="-"
-              disabled={inputsBloqueados}
-            />
-          </article>
-          <article className="infoPerfilBike">
-            <h3 className="secaoPerfilBike">Acessórios</h3>
-            <input
-              className="textoPerfilBike"
-              type="text"
-              value={bikeData.acessorios}
-              onChange={(e) => handleInputChange(e, 'acessorios')}
-              placeholder="-"
-              disabled={inputsBloqueados}
-            />
-          </article>
-          <article className="infoPerfilBike">
-            <h3 className="secaoPerfilBike">Modelo</h3>
-            <input
-              className="textoPerfilBike"
-              type="text"
-              value={bikeData.modelo}
-              onChange={(e) => handleInputChange(e, 'modelo')}
-              placeholder="-"
-              disabled={inputsBloqueados}
-            />
-          </article>
-          <article className="infoPerfilBike">
-            <h3 className="secaoPerfilBike">Marca</h3>
-            <input
-              className="textoPerfilBike"
-              type="text"
-              value={bikeData.marca}
-              onChange={(e) => handleInputChange(e, 'marca')}
-              placeholder="-"
-              disabled={inputsBloqueados}
-            />
-          </article>
-        </section>
-      </section>
-    </main>
-  );
+    </section>
+  </section>
+</main>);
 }
 

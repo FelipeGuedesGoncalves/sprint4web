@@ -1,3 +1,9 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
 .h1PerfilBike{
     color: rgb(0, 162, 255);
     left: none;
@@ -8,7 +14,7 @@
 
 /* perfilBike */
 .perfilBike {
-    width: 75vw;
+    width: 70vw;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -19,10 +25,11 @@
 .fotoPerfilBike {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 430px;
+    width: fit-content;
+    height: fit-content;
     margin: 50px;
     margin-top: 60px;
+    margin-left: 0;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -30,29 +37,35 @@
 }
 
 .imagemPerfilBike {
-    width: 360px;
-    height: 260px;
+    min-width: 360px;
+    width: 24vw;
+    min-height: 260px;
+    height: 17.33vw;
     border: 2px solid rgb(0, 162, 255);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.arquivo{
-    width: 250px;
-    border-radius: 800px;
+.mudarimagemPerfilBike {
+    min-width: 360px;
+    width: 24vw;
+    min-height: 260px;
+    height: 17.33vw;
+    display: flex;
+    border: 2px solid rgb(0, 162, 255);
+    align-items: center;
+    justify-content: center;
 }
 
 .botaoMudarImagemBike{
-    background-image: url("/mudar-foto.png");
-    width: 360px;
-    height: 260px;
-    border: 2px solid rgb(0, 162, 255);
+    min-width: 360px;
+    width: 24vw;
+    min-height: 260px;
+    height: 17.33vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-position: center;
-    background-size: 300px;
     color: transparent;
 
 
@@ -63,13 +76,12 @@
 }
 
 .nomePerfilBike {
-    width: 270px;
-    height: 120px;
-    padding-top: 25px;
+    width: fit-content;
     color: rgb(0, 162, 255);
     font-size: 25px;
     left: 0;
-    margin: 0;
+    margin: 35px;
+    margin-bottom:20px;
     text-align: center;
 }
 
@@ -77,7 +89,6 @@
     width: 270px;
     display: flex;
     flex-direction: column;
-    top: 340px;
 }
 
 .btnPerfilBike{
@@ -89,11 +100,27 @@
     height: 60px;
     margin-top: 20px;
     width: fill;
+    font-size: 18px;
 
     &:hover{
         color: white;
         background-color: rgb(0, 162, 255);
         border: 2px solid rgb(0, 162, 255);
+        cursor: pointer;
+    }
+}
+
+.excluir{
+    background-color: white;
+    color:rgb(255, 84, 84);
+    border: 2px solid rgb(255, 84, 84);
+    width: 40%;
+
+    &:hover{
+        background-color: rgb(255, 84, 84);
+        color: white;
+        border: 2px solid rgb(255, 84, 84);
+        cursor: pointer;
     }
 }
 
@@ -103,12 +130,12 @@
     height: fit-content;
     margin: 50px;
     margin-left: 0;
+    margin-right: 0;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 100em;
+    width: fill;
 }
 
 .infoPerfilBike {
@@ -117,10 +144,12 @@
     font-size: 20px;
     color: black;
     width: 100%;
-    margin-right: 25px;
+    margin-right: 0;
+    
 }
 
 .secaoPerfilBike {
+    width: fit-content;
     height: 40px;
     font-weight: 700;
 }
@@ -133,7 +162,7 @@
     padding-left: 15px;
     font-size: 17px;
     border: none;
-    width: 40vw;
+    width: 100%;
 }
 
 .maisPerfilBike {
@@ -165,34 +194,122 @@
 
 @media (min-width: 0px) and (max-width: 1023.99px) {
 
-    .imagemPerfilBike{
-        width: 200px;
-        height: 200px;
+    .perfilBike {
+        width: 75vw;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
+        position: relative;
     }
 
-    .botaoMudarImagem{
-        width: 200px;
-        height: 200px;
-    }
-
-    .perfilBike{
+    .fotoPerfilBike {
+        width: fill;
+        height: fit-content;
+        margin: 50px;
+        margin-left:0px ;
+        margin-right:0px ;
+        margin-top: 60px;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0;
     }
+    
+    .imagemPerfilBike {
+        width: 360px;
+        height: 260px;
+        border: 2px solid rgb(0, 162, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mudarimagemPerfilBike {
+        width: 360px;
+        height: 260px;
+        display: flex;
+        border: 2px solid rgb(0, 162, 255);
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .botaoMudarImagemBike{
+        width: 360px;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: transparent;
+    
+    
+    
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    
+    .nomePerfilBike {
+        width: fit-content;
+        color: rgb(0, 162, 255);
+        font-size: 25px;
+        left: 0;
+        margin: 35px;
+        margin-bottom:20px;
+        text-align: center;
+    }
+    
     .btns{
-        margin-top: -30px;
+        width: fill;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .btnPerfilBike{
+        color: rgb(0, 162, 255);
+        background-color: white;
+        border: 2px solid rgb(0, 162, 255);
+        border-radius: 25px;
+        transition: 0.2s ease;
+        height: 60px;
+        margin-top: 20px;
+        width: fill;
+        font-size: 18px;
+
+        
+        &:hover{
+            color: white;
+            background-color: rgb(0, 162, 255);
+            border: 2px solid rgb(0, 162, 255);
+            cursor: pointer;
+        }
+
+    }
+
+    .excluir{
+        background-color: white;
+        color:rgb(255, 84, 84);
+        border: 2px solid rgb(255, 84, 84);
+        width: 40%;
+    
+        &:hover{
+            background-color: rgb(255, 84, 84);
+            color: white;
+            border: 2px solid rgb(255, 84, 84);
+            cursor: pointer;
+        }
     }
 
     .infosPerfilBike{
-        width: 749px;
+        width: fit-content;
         margin: 0;
         left: 0;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
     }
 
     .infoPerfilBike{
@@ -203,6 +320,7 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 25px;
+        flex-direction: column;
     }
 
     .secaoPerfilBike{

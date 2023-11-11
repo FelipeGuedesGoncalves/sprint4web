@@ -16,7 +16,7 @@ export default function MinhasBicicletas() {
   }, []);
 
   return (
-    <main>
+    <main className='mainMinhasBikes'>
       <h1 className='h1bikes'>Minhas Bicicletas</h1>
 
       {bicicletas.map(bicicleta => (
@@ -43,7 +43,7 @@ export default function MinhasBicicletas() {
         </section>
       ))}
 
-      <button className='addBike'><Link href={'/Bike/0'}>+</Link></button>
+      <Link className='addBike' href={'/Bike/0'}>Cadastrar Bike</Link>
     </main>
   );
 }
