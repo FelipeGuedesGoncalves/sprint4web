@@ -19,19 +19,29 @@ export default function Perfil() {
   const [inputsBloqueados, setInputsBloqueados] = useState(true);
   const [nm_completoExibido, setnm_completoExibido] = useState('Cliente Porto');
 
-  useEffect(() => {
-    fetch('http://localhost:3001/perfil')
-      .then(resp => resp.json())
-      .then(resp => {
-        if (Object.keys(resp).length === 0) {
-          setnm_completoExibido('Cliente Porto');
-        } else {
-          setnm_completoExibido(resp.nm_completo);
-          setPerfilData(resp);
-        }
-      })
-      .catch(error => console.error(error));
-  }, []);
+useEffect(() => {
+  // Faz uma requisição GET para obter os dados do cliente do servidor
+  fetch('http://localhost:3001/cliente', {
+    method: 'GET',
+  })
+    .then(resp => resp.json())
+    .then(resp => {
+      // Verifica se a resposta está vazia
+      if (Object.keys(resp).length === 0) {
+        // Se a resposta estiver vazia, define o nome exibido como 'Cliente Porto'
+        setnm_completoExibido('Cliente Porto');
+      } else {
+        // Se houver dados na resposta, atualiza o nome exibido e os dados do perfil
+        setnm_completoExibido(resp.nm_completo);
+        setPerfilData(resp);
+      }
+    })
+    .catch(error => {
+      // Captura e registra qualquer erro ocorrido durante a requisição
+      console.error('Erro ao obter dados do cliente:', error);
+    });
+}, []);
+
 
   const handleInputChange = (event, campo) => {
     if (!inputsBloqueados) {
@@ -59,7 +69,7 @@ export default function Perfil() {
   };
 
   const handleSalvar = () => {
-    fetch('http://localhost:3001/perfil', {
+    fetch('http://localhost:3001/cliente', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

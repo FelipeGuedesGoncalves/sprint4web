@@ -1,41 +1,32 @@
 {
-  "perfil": {
-    "nm_completo": "joão",
-    "telefone": "0000999-33",
-    "email": "felipeguedes@gmail.com",
-    "genero": "Masculino",
-    "dataNascimento": "2012-09-04",
-    "cpf": "190283746018972346",
-    "endereco": "jd meeeeeeeeeeeeeee",
-    "imagemPerfil": "blob:http://localhost:3000/99910288-27ea-4f57-87cf-3c16090d8ff7"
+  "cliente": {
+    "nm_completo": "Felipe",
+    "telefone": "",
+    "email": "",
+    "genero": "",
+    "dataNascimento": "",
+    "cpf": "",
+    "endereco": "",
+    "imagemPerfil": "/imagem_ausente2.png"
   },
   "bicicletas": [
     {
-      "nome": "",
-      "numeroSerie": "",
-      "acessorios": "",
-      "modelo": "",
-      "marca": "",
-      "imagem": "blob:http://localhost:3000/93a8c9b4-1de8-47a9-b825-d2aec4a1656f",
+      "nome": "der",
+      "numeroSerie": "3ff",
+      "acessorios": "correia",
+      "modelo": "mega bike",
+      "marca": "qwerg",
+      "imagem": "blob:http://localhost:3000/9eb7a1f7-e16e-452b-a53f-f18d41e65bc9",
+      "id": 1
+    },
+    {
+      "nome": "qwpo9regubqpiw9guerg",
+      "numeroSerie": "1234",
+      "acessorios": "qr3g",
+      "modelo": "qerhg",
+      "marca": "qrehg",
+      "imagem": "blob:http://localhost:3000/9b8f0e20-2615-42cc-9f72-6a5c5f93d51b",
       "id": 2
-    },
-    {
-      "nome": "",
-      "numeroSerie": "",
-      "acessorios": "",
-      "modelo": "",
-      "marca": "",
-      "imagem": "blob:http://localhost:3000/4505ec81-b089-466f-b866-926998ccf260",
-      "id": 3
-    },
-    {
-      "nome": "",
-      "numeroSerie": "",
-      "acessorios": "",
-      "modelo": "",
-      "marca": "",
-      "imagem": "/sem_imagem.png",
-      "id": 4
     }
   ]
 }

@@ -9,7 +9,9 @@ export default function MinhasBicicletas() {
 
   useEffect(() => {
     // Simula a busca de bicicletas do servidor
-    fetch(`http://localhost:3001/bicicletas`)
+    fetch(`http://localhost:3001/bicicletas`, {
+      method: 'GET',
+    })
       .then(resp => resp.json())
       .then(resp => setBicicletas(resp))
       .catch(error => console.error(error));

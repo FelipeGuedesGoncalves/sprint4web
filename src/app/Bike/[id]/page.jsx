@@ -88,7 +88,9 @@ export default function BikeForm({ params }) {
 
   useEffect(() => {
     if (bikeId) {
-      fetch(`http://localhost:3001/bicicletas/${bikeId}`)
+      fetch(`http://localhost:3001/bicicletas/${bikeId}`, {
+        method: 'GET',
+      })
         .then(resp => resp.json())
         .then(resp => setBikeData(resp))
         .catch(error => console.error(error))
